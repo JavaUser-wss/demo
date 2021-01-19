@@ -1,0 +1,28 @@
+spring:
+  jackson:
+    date-format: yyyy-MM-dd
+    time-zone: Asia/Shanghai
+  profiles:
+    active: dev
+  mvc:
+    static-path-pattern: /static/**  #配置静态资源路径
+mybatis:    #配置xxxxMapper.xml文件的路径
+  mapper-locations: classpath:mybatis/**/*.xml
+---
+server:
+  port: 8080
+  servlet:
+    context-path: /sdev
+spring:
+  profiles: dev
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    virtual-host: testhost
+    username: admin
+    password: admin
+
+
+
+
+
